@@ -11,7 +11,8 @@
         android:id="@+id/recycler_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:listitem="" />
+        tools:listitem="@layout/notes_layout"
+        />
 
 
 </RelativeLayout>
