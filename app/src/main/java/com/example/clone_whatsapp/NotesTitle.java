@@ -24,6 +24,7 @@ public class NotesTitle extends AppCompatActivity {
         title1 = (EditText)findViewById(R.id.title1);
         NotesText = (EditText)findViewById(R.id.NotesText);
         enter = (Button)findViewById(R.id.enter);
+
         enter.setOnClickListener(new View.OnClickListener() {
                                      @Override
                                      public void onClick(View view) {
