@@ -24,7 +24,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.Recycl
     @NonNull
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return null;
+
     }
 
     @Override
@@ -37,6 +37,8 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.Recycl
         return data.size();
     }
     public static class RecyclerViewHolder extends RecyclerView.ViewHolder {
+        TextView title2;
+        TextView NotesText2;
         public RecyclerViewHolder(@NonNull View itemView) {
             super(itemView);
         }
