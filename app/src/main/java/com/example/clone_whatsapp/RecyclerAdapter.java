@@ -2,6 +2,7 @@ package com.example.clone_whatsapp;
 
 
 import android.content.Context;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
@@ -23,13 +24,16 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.Recycl
 
     @NonNull
     @Override
-    public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-
+    public RecyclerViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.notes_layout,parent,false);
+    return new RecyclerViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
-
+    public void onBindViewHolder(@NonNull RecyclerViewHolder holder, int position) {
+    MyData curData= data.get(position);
+    holder.title2.setText(curData.getTitle());
+    holder.NotesText2.setText(curData.getText());
     }
 
     @Override
