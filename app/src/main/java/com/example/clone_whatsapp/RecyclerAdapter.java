@@ -2,6 +2,7 @@ package com.example.clone_whatsapp;
 
 
 import android.content.Context;
+import android.provider.ContactsContract;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -43,8 +44,10 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.Recycl
     public static class RecyclerViewHolder extends RecyclerView.ViewHolder {
         TextView title2;
         TextView NotesText2;
-        public RecyclerViewHolder(@NonNull View itemView) {
-            super(itemView);
+        public RecyclerViewHolder(@NonNull View view) {
+            super(view);
+            title2 = view.findViewById(R.id.title2);
+            NotesText2 = view.findViewById(R.id.NotesText2);
         }
     }
 }

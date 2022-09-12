@@ -1,6 +1,8 @@
 package com.example.clone_whatsapp;
 
-public class MyData {
+import java.io.Serializable;
+
+public class MyData implements Serializable {
 
     private String title;
     private String text;

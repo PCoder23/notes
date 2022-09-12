@@ -14,10 +14,10 @@
         android:theme="@style/Theme.Clone_WhatsApp"
         tools:targetApi="31">
         <activity
-            android:name=".Notes"
+            android:name=".NotesTitle"
             android:exported="false" />
         <activity
-            android:name=".NotesTitle"
+            android:name=".Notes"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
