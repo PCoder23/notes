@@ -2,11 +2,14 @@ package com.example.clone_whatsapp;
 
 
 import android.content.Context;
+import android.content.Intent;
 import android.provider.ContactsContract;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -27,6 +30,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.Recycl
     @Override
     public RecyclerViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
     View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.notes_layout,parent,false);
+
     return new RecyclerViewHolder(view);
     }
 
@@ -35,6 +39,13 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.Recycl
     MyData curData= data.get(position);
     holder.title2.setText(curData.getTitle());
     holder.NotesText2.setText(curData.getText());
+    holder.notes.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            Intent intent = new Intent(context,Notes.class);
+            context.startActivity(intent);
+        }
+    });
     }
 
     @Override
@@ -44,10 +55,12 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.Recycl
     public static class RecyclerViewHolder extends RecyclerView.ViewHolder {
         TextView title2;
         TextView NotesText2;
+        LinearLayout notes;
         public RecyclerViewHolder(@NonNull View view) {
             super(view);
             title2 = view.findViewById(R.id.title2);
             NotesText2 = view.findViewById(R.id.NotesText2);
+            notes=view.findViewById(R.id.notes);
         }
     }
 }
